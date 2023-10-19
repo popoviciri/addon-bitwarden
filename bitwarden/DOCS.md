@@ -92,6 +92,12 @@ The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default_
 
+### Option: `database_url`
+
+Alternately use a different database than SQLite. This option defaults to
+the path to the sqlite db file: data/sqlite3. If used with mariadb addon, this
+would be: mysql://user:password@core-mariadb/database_name
+
 ### Option: `request_size_limit`
 
 By default the API calls are limited to 10MB. This should be sufficient for

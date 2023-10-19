@@ -26,4 +26,5 @@ schema:
   ssl: bool
   certfile: str
   keyfile: str
+  database_url: str?
   request_size_limit: int?

@@ -8,6 +8,7 @@ declare admin_token
 declare log_level
 declare request_size_limit
 declare secret_key
+declare database_url
 
 # Set defaults
 export DATA_FOLDER=/data
@@ -65,6 +66,13 @@ if ! bashio::fs.file_exists '/data/config.json'; then
     bashio::log.info "and stops showing this message."
     bashio::log.info
 fi
+
+# Set path to database
+if bashio::config.has_value 'database_url'; then
+    database_url=$(bashio::config 'database_url')
+    export DATABASE_URL="${database_url}"
+fi
+
 
 # API request size limit
 if bashio::config.has_value 'request_size_limit'; then

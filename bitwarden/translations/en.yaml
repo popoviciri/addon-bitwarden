@@ -18,6 +18,11 @@ configuration:
     description: >-
       The private key file to use for SSL. Note that this file must
       exist in the /ssl/ folder.
+  database_url:
+    name: Database URL
+    description: >-
+      Optionally use mariadb or postgresql with Vaultwarden. The
+      default is the path to sqlite db file data/db.sqlite3.
   request_size_limit:
     name: Size limit of HTTP requests
     description: >-
